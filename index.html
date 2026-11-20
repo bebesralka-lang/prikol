@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Estate Agency - Your House Is Waiting</title>
+    
+    <!-- Подключаем современный шрифт из Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Встроенные стили (CSS) -->
+    <style>
+        /* Базовые настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Темный фон */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Контейнер для ограничения ширины контента */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Шапка сайта (Header) --- */
+        header {
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .btn-explore {
+            background-color: #ffffff;
+            color: #121212;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-explore:hover {
+            background-color: #d1d1d1;
+        }
+
+        /* --- Главный экран (Hero Section) --- */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        /* Выделение слова "House" овалом, как на макете */
+        .hero h1 span.oval-word {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 span.oval-word::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110%;
+            height: 120%;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #b3b3b3;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .btn-primary {
+            background-color: #dfb57c; /* Цвет беж/золото с макета */
+            color: #121212;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Блок с работами (Grid) --- */
+        .portfolio {
+            padding: 40px 0 100px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.6; /* Затемнение картинки */
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+            background: linear-gradient(to top, rgba(18,18,18,0.9) 0%, rgba(18,18,18,0) 100%);
+        }
+
+        .card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        /* Список с галочками */
+        .features-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #d1d1d1;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #dfb57c;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* --- Подвал (Footer) --- */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* --- Адаптивность (для телефонов) --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                display: none; /* Скрываем меню на телефонах для простоты */
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .grid {
+                grid-template-columns: 1fr; /* Одна колонка на телефоне */
+            }
+            .card {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header>
+            <div class="logo">ESTATE.</div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </nav>
+            <a href="#" class="btn-explore">Explore</a>
+        </header>
+
+        <!-- Главный экран -->
+        <section class="hero">
+            <h1>Your <span class="oval-word">House</span> Is Waiting For You!</h1>
+            <p>Best Estate Agency in California. Get Close With Us, Enjoy Life.</p>
+            <a href="#" class="btn-primary">Learn More</a>
+        </section>
+
+        <!-- Блок с карточками (Портфолио/Услуги) -->
+        <section class="portfolio">
+            <div class="grid">
+                
+                <!-- Карточка 1 -->
+                <div class="card">
+                    <!-- Замени ссылку внутри src на свою картинку -->
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern House">
+                    <div class="card-content">
+                        <h3>Top Estate Agency Services</h3>
+                        <p>Real Estate Agency in California</p>
+                        <ul class="features-list">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Consectetur adipiscing elit.</li>
+                            <li>Sed do eiusmod tempor.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="card">
+                    <!-- Замени ссылку внутри src на свою картинку -->
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Home">
+                    <div class="card-content">
+                        <h3>Best Real Estate For You</h3>
+                        <p>Real Estate Agency in California</p>
+                        <ul class="features-list">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Consectetur adipiscing elit.</li>
+                            <li>Sed do eiusmod tempor.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            &copy; 2024 Estate Agency. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
