@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тюльпаны для тебя 🌷</title>
-    <!-- Красивый шрифт с засечками для заголовков и простой для текста -->
+    <title>Для мамы ❤️</title>
+    <!-- Подключаем красивые шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
@@ -29,286 +29,254 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             position: relative;
             z-index: 2;
         }
 
-        /* Декоративная волнистая линия на фоне */
-        .bg-wave {
-            position: absolute;
-            top: 20%;
-            left: -10%;
-            width: 120%;
-            height: 500px;
-            background: rgba(255, 182, 193, 0.3);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            transform: rotate(-5deg);
-            z-index: 0;
-            filter: blur(40px);
-        }
-
-        /* --- Главный экран (Верхняя карточка) --- */
-        .main-card {
+        /* --- Музыкальный плеер --- */
+        .music-player {
             background: white;
-            border-radius: 30px;
-            padding: 50px;
+            padding: 15px 30px;
+            border-radius: 50px;
             display: flex;
-            gap: 40px;
-            box-shadow: 0 20px 50px rgba(232, 90, 113, 0.1);
-            margin-top: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .main-card-img {
-            flex: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .main-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 400px;
-        }
-
-        .main-card-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .main-card h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        /* Кружочки выбора */
-        .color-picker {
-            display: flex;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .color-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 3px solid transparent;
-            transition: transform 0.3s, border 0.3s;
-        }
-
-        .color-circle:hover {
-            transform: scale(1.1);
-        }
-
-        .color-circle.active {
-            border-color: #e85a71;
-        }
-
-        /* Кнопка */
-        .btn {
-            display: inline-block;
-            background-color: #e85a71;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            text-align: center;
-            width: fit-content;
-            box-shadow: 0 10px 20px rgba(232, 90, 113, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #d1485d;
-            transform: translateY(-3px);
-        }
-
-        /* --- Разделитель с фото и волной --- */
-        .divider-section {
-            position: relative;
-            height: 400px;
-            margin: 60px 0;
-            display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(232, 90, 113, 0.15);
+            margin-bottom: 40px;
+            margin-top: 20px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
         }
 
-        .divider-img {
-            position: absolute;
-            width: 60%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 40px;
-            z-index: 1;
+        .music-player p {
+            font-weight: 500;
+            color: #e85a71;
+            font-size: 14px;
         }
 
-        /* Красивая розовая волна поверх фото */
-        .wavy-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #ffb6c1; /* Розовый */
-            opacity: 0.8;
-            z-index: 2;
-            clip-path: polygon(0 40%, 20% 60%, 40% 30%, 60% 70%, 80% 40%, 100% 60%, 100% 100%, 0 100%);
+        audio {
+            height: 40px;
+            outline: none;
         }
 
-        /* --- Блок с доставкой (Нижний) --- */
-        .delivery-section {
+        /* --- Главный экран --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
             background: white;
             border-radius: 30px;
-            padding: 60px;
+            box-shadow: 0 20px 50px rgba(232, 90, 113, 0.1);
             margin-bottom: 60px;
-            box-shadow: 0 20px 50px rgba(232, 90, 113, 0.05);
         }
 
-        .delivery-header {
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- Таймлайн --- */
+        .timeline-section {
+            position: relative;
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        .timeline-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
-        .delivery-header h2 {
+        .timeline-title h2 {
             font-size: 36px;
+        }
+
+        /* Сама линия */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 150px;
+            bottom: 0;
+            width: 4px;
+            background: #ffb6c1;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Контейнер для элементов */
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        /* Четные элементы (справа) */
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        /* Карточка с фото и текстом */
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 90%;
+            position: relative;
+        }
+
+        /* Точка на линии */
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #e85a71;
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 30px;
+            right: -50px; /* Позиция для левой стороны */
+            box-shadow: 0 0 0 4px #ffb6c1;
+            z-index: 10;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            right: auto;
+            left: -50px; /* Позиция для правой стороны */
+        }
+
+        .timeline-content img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content h3 {
+            font-size: 22px;
             margin-bottom: 10px;
         }
 
-        .delivery-header p {
-            color: #888;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .delivery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .delivery-img {
-            border-radius: 20px;
-            overflow: hidden;
-            height: 400px;
-        }
-
-        .delivery-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .delivery-text h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            margin-top: 30px;
-        }
-
-        .delivery-text p {
+        .timeline-content p {
             color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        /* Мобильная версия (для телефона) */
+        /* --- Мобильная версия --- */
         @media (max-width: 768px) {
-            .main-card {
+            .hero h1 { font-size: 32px; }
+            
+            .timeline-line { left: 30px; }
+            
+            .timeline-item, 
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-content { width: 100%; }
+
+            .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -50px;
+                right: auto;
+            }
+
+            .music-player {
                 flex-direction: column;
-                padding: 30px;
-            }
-            .main-card-img img {
-                min-height: 250px;
-            }
-            .main-card h1 {
-                font-size: 32px;
-            }
-            .divider-section {
-                height: 250px;
-            }
-            .divider-img {
-                width: 90%;
-            }
-            .delivery-section {
-                padding: 30px;
-            }
-            .delivery-grid {
-                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+                border-radius: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-wave"></div>
-
     <div class="container">
         
-        <!-- ВЕРХНИЙ БЛОК -->
-        <div class="main-card">
-            <div class="main-card-img">
-                <!-- Замени 1.jpg на свою картинку -->
-                <img src="1.jpg" alt="Красивые цветы">
-            </div>
-            <div class="main-card-content">
-                <h1>Тюльпаны для тебя</h1>
-                <p style="color: #666; margin-bottom: 20px;">Выбери свое настроение:</p>
-                
-                <!-- Кружочки (можно сделать интерактивными через JS, пока просто для красоты) -->
-                <div class="color-picker">
-                    <div class="color-circle" style="background: #ffb6c1;"></div>
-                    <div class="color-circle active" style="background: #e85a71;"></div>
-                    <div class="color-circle" style="background: #f4d03f;"></div>
-                    <div class="color-circle" style="background: #a3e4d7;"></div>
-                    <div class="color-circle" style="background: #d7bde2;"></div>
-                </div>
-
-                <a href="#delivery" class="btn">Посмотреть послание</a>
-            </div>
+        <!-- МУЗЫКАЛЬНЫЙ ПЛЕЕР -->
+        <div class="music-player">
+            <p>🎵 Песня для мамы (нажми Play)</p>
+            <!-- Замени song.mp3 на название твоего файла -->
+            <audio controls>
+                <source src="song.mp3" type="audio/mpeg">
+                Твой браузер не поддерживает аудио.
+            </audio>
         </div>
 
-        <!-- РАЗДЕЛИТЕЛЬ С ФОТО -->
-        <div class="divider-section">
-            <!-- Замени 2.jpg на фото девушки или красивый фон -->
-            <img src="2.jpg" alt="Девушка" class="divider-img">
-            <div class="wavy-overlay"></div>
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+        <div class="hero">
+            <h1>Мамочке с любовью</h1>
+            <p>Этот маленький цифровой уголок создан специально для тебя. Прокрути вниз, чтобы вспомнить наши лучшие моменты и послушать песню, которую я написала.</p>
         </div>
 
-        <!-- БЛОК ДОСТАВКИ -->
-        <div class="delivery-section" id="delivery">
-            <div class="delivery-header">
-                <p>С любовью</p>
-                <h2>Мое послание тебе</h2>
+        <!-- ТАЙМЛАЙН -->
+        <div class="timeline-section">
+            <div class="timeline-title">
+                <h2>Наша история</h2>
+            </div>
+            
+            <div class="timeline-line"></div>
+
+            <!-- Событие 1 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <!-- Замени photo1.jpg на свою картинку -->
+                    <img src="photo1.jpg" alt="Молодая мама">
+                    <h3>Начало начал</h3>
+                    <p>Здесь можно написать пару теплых слов о том, как все начиналось. Например: «Спасибо, что подарила мне жизнь и всегда была рядом».</p>
+                </div>
             </div>
 
-            <div class="delivery-grid">
-                <div class="delivery-img">
-                    <!-- Замени 3.jpg на красивый макро-снимок цветка -->
-                    <img src="3.jpg" alt="Макро цветка">
-                </div>
-                <div class="delivery-text">
-                    <h3>Ты — мое вдохновение</h3>
-                    <p>Этот сайт создан специально для тебя. Здесь нет кнопок «купить» или сложных форм. Только ты, я и эти цветы.</p>
-                    <p>Я хотел(а) подарить тебе что-то, что не завянет через неделю, как обычный букет. Пусть это будет нашим маленьким цифровым садом.</p>
-                    
-                    <h3 style="margin-top: 40px;">Спасибо, что ты есть</h3>
-                    <p>Каждый день с тобой — это праздник. Надеюсь, этот сюрприз заставит тебя улыбнуться так же, как ты заставляешь улыбаться меня.</p>
+            <!-- Событие 2 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <!-- Замени photo2.jpg на свою картинку -->
+                    <img src="photo2.jpg" alt="Детство">
+                    <h3>Мое детство</h3>
+                    <p>«Твои сказки на ночь, вкусные пироги по выходным и бесконечная вера в меня. Я помню это всё».</p>
                 </div>
             </div>
+
+            <!-- Событие 3 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <!-- Замени photo3.jpg на свою картинку -->
+                    <img src="photo3.jpg" alt="Совместные моменты">
+                    <h3>Наши поездки</h3>
+                    <p>«Каждый наш совместный отпуск или просто выезд на природу — это самые теплые воспоминания, которые я храню».</p>
+                </div>
+            </div>
+
+            <!-- Событие 4 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <!-- Замени photo4.jpg на свою картинку -->
+                    <img src="photo4.jpg" alt="Сейчас">
+                    <h3>Наши дни</h3>
+                    <p>«Спасибо за твою поддержку сегодня. Ты — мой самый близкий друг и мудрый советчик».</p>
+                </div>
+            </div>
+
         </div>
 
     </div>
