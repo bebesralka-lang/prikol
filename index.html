@@ -3,311 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Estate Agency - Your House Is Waiting</title>
+    <title>Smiley - Bank Untuk Para Freelancer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Подключаем современный шрифт из Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-    <!-- Встроенные стили (CSS) -->
     <style>
-        /* Базовые настройки */
+        /* --- Базовые настройки --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121212; /* Темный фон */
-            color: #ffffff;
-            line-height: 1.6;
+            background-color: #f8f9fc;
+            color: #333;
         }
 
-        /* Контейнер для ограничения ширины контента */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* --- Главный фиолетовый баннер --- */
+        .hero-section {
+            background: linear-gradient(135deg, #7b2cbf 0%, #5a189a 100%);
+            color: white;
+            padding: 20px 50px 100px 50px;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
         }
 
-        /* --- Шапка сайта (Header) --- */
-        header {
-            padding: 25px 0;
+        /* Имитация волнистого низа (декоративный элемент) */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #f8f9fc;
+            border-radius: 50% 50% 0 0;
+        }
+
+        /* Навигация */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
         }
 
         .logo {
             font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 8px;
+            transform: rotate(45deg);
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
 
         .nav-links a {
-            color: #b3b3b3;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 400;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
+            color: white;
         }
 
-        .btn-explore {
-            background-color: #ffffff;
-            color: #121212;
-            padding: 10px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-
-        .btn-explore:hover {
-            background-color: #d1d1d1;
-        }
-
-        /* --- Главный экран (Hero Section) --- */
-        .hero {
-            padding: 100px 0;
-            text-align: center;
+        .nav-buttons {
             display: flex;
-            flex-direction: column;
+            gap: 20px;
             align-items: center;
         }
 
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            max-width: 800px;
-        }
-
-        /* Выделение слова "House" овалом, как на макете */
-        .hero h1 span.oval-word {
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero h1 span.oval-word::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 110%;
-            height: 120%;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: #b3b3b3;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        .btn-primary {
-            background-color: #dfb57c; /* Цвет беж/золото с макета */
-            color: #121212;
-            padding: 16px 40px;
-            border-radius: 30px;
+        .btn-login {
+            color: white;
             text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-gratis {
+            background-color: #ff477e;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 71, 126, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .btn-gratis:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Текст в баннере */
+        .hero-content {
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
             font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
             font-size: 16px;
-            transition: opacity 0.3s;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
         }
 
-        .btn-primary:hover {
-            opacity: 0.8;
+        /* Заглушка для иллюстрации (вместо монстриков) */
+        .illustration-placeholder {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 18px;
+            position: relative;
+            z-index: 10;
         }
 
-        /* --- Блок с работами (Grid) --- */
-        .portfolio {
-            padding: 40px 0 100px 0;
+        /* --- Блок с преимуществами (Белый фон) --- */
+        .features-section {
+            padding: 100px 50px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
 
-        .grid {
+        .features-section .subtitle {
+            color: #7b2cbf;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .features-section h2 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .features-section .desc {
+            color: #666;
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto 60px auto;
+        }
+
+        /* Сетка карточек */
+        .cards-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
         }
 
         .card {
-            background-color: #1e1e1e;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
         }
 
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            opacity: 0.6; /* Затемнение картинки */
+        .card:hover {
+            transform: translateY(-5px);
         }
 
-        .card-content {
-            position: relative;
-            z-index: 2;
-            padding: 40px;
+        /* Разные цвета нижней границы для карточек */
+        .card:nth-child(1) { border-bottom-color: #ff477e; }
+        .card:nth-child(2) { border-bottom-color: #00d2ff; }
+        .card:nth-child(3) { border-bottom-color: #7b2cbf; }
+        .card:nth-child(4) { border-bottom-color: #20c997; }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 100%;
-            background: linear-gradient(to top, rgba(18,18,18,0.9) 0%, rgba(18,18,18,0) 100%);
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
+
+        /* Заглушки для иконок */
+        .card:nth-child(1) .card-icon { background: #ffe5ec; color: #ff477e; }
+        .card:nth-child(2) .card-icon { background: #e0f7fa; color: #00d2ff; }
+        .card:nth-child(3) .card-icon { background: #f3e8ff; color: #7b2cbf; }
+        .card:nth-child(4) .card-icon { background: #e8f5e9; color: #20c997; }
 
         .card h3 {
-            font-size: 28px;
+            font-size: 18px;
             margin-bottom: 15px;
+            color: #1a1a1a;
         }
 
-        /* Список с галочками */
-        .features-list {
-            list-style: none;
-            margin-top: 15px;
+        .card p {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
         }
 
-        .features-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #d1d1d1;
-        }
-
-        .features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #dfb57c;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* --- Подвал (Footer) --- */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* --- Адаптивность (для телефонов) --- */
+        /* --- Адаптивность --- */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .nav-links {
-                display: none; /* Скрываем меню на телефонах для простоты */
-            }
-            .hero h1 {
-                font-size: 36px;
-            }
-            .grid {
-                grid-template-columns: 1fr; /* Одна колонка на телефоне */
-            }
-            .card {
-                min-height: 300px;
-            }
+            .hero-section { padding: 20px 20px 80px 20px; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 32px; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .features-section { padding: 60px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Шапка сайта -->
-        <header>
-            <div class="logo">ESTATE.</div>
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-                <a href="#">Login</a>
-            </nav>
-            <a href="#" class="btn-explore">Explore</a>
-        </header>
-
-        <!-- Главный экран -->
-        <section class="hero">
-            <h1>Your <span class="oval-word">House</span> Is Waiting For You!</h1>
-            <p>Best Estate Agency in California. Get Close With Us, Enjoy Life.</p>
-            <a href="#" class="btn-primary">Learn More</a>
-        </section>
-
-        <!-- Блок с карточками (Портфолио/Услуги) -->
-        <section class="portfolio">
-            <div class="grid">
-                
-                <!-- Карточка 1 -->
-                <div class="card">
-                    <!-- Замени ссылку внутри src на свою картинку -->
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern House">
-                    <div class="card-content">
-                        <h3>Top Estate Agency Services</h3>
-                        <p>Real Estate Agency in California</p>
-                        <ul class="features-list">
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Consectetur adipiscing elit.</li>
-                            <li>Sed do eiusmod tempor.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Карточка 2 -->
-                <div class="card">
-                    <!-- Замени ссылку внутри src на свою картинку -->
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Home">
-                    <div class="card-content">
-                        <h3>Best Real Estate For You</h3>
-                        <p>Real Estate Agency in California</p>
-                        <ul class="features-list">
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Consectetur adipiscing elit.</li>
-                            <li>Sed do eiusmod tempor.</li>
-                        </ul>
-                    </div>
-                </div>
-
+    <!-- Главный баннер -->
+    <section class="hero-section">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                Smiley
             </div>
-        </section>
-    </div>
+            <div class="nav-links">
+                <a href="#">Pricing</a>
+                <a href="#">Professional</a>
+                <a href="#">Enterprises</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-gratis">Coba Gratis</a>
+            </div>
+        </nav>
 
-    <!-- Подвал -->
-    <footer>
-        <div class="container">
-            &copy; 2024 Estate Agency. All rights reserved.
+        <div class="hero-content">
+            <h1>Bank Untuk Para Freelancer</h1>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+            
+            <!-- Сюда нужно будет вставить картинку с монстриками (img) -->
+            <div class="illustration-placeholder">
+                [ Сюда вставить картинку с монстриками и графиками ]
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Блок преимуществ -->
+    <section class="features-section">
+        <div class="subtitle">Fitur Smiley</div>
+        <h2>Lebih Baik Dari Bank</h2>
+        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+
+        <div class="cards-grid">
+            <!-- Карточка 1 -->
+            <div class="card">
+                <div class="card-icon">💳</div>
+                <h3>Transaksi Mudah</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, accusantium doloremque laudantium.</p>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3>Gratis Biaya Transfer</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, accusantium doloremque laudantium.</p>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="card">
+                <div class="card-icon">💳</div>
+                <h3>Print Card</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, accusantium doloremque laudantium.</p>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>Bebas Limit</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, accusantium doloremque laudantium.</p>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
